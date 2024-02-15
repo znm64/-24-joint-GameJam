@@ -44,3 +44,9 @@ TagManager:
   - name: Ground
     uniqueID: 1314421191
     locked: 0
+  - name: Player
+    uniqueID: 580708827
+    locked: 0
+  - name: Soul
+    uniqueID: 1857606535
+    locked: 0

@@ -7,9 +7,9 @@ public class PlayerSwitcher : MonoBehaviour
 {
     [SerializeField] private GameObject HumanPlayer;
     [SerializeField] private GameObject DragonPlayer;
+    [SerializeField] private Transform DragonTransform;
 
     private bool Human;
-    private Transform Follow;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +27,17 @@ public class PlayerSwitcher : MonoBehaviour
             {
                 HumanPlayer.SetActive(false);
                 DragonPlayer.SetActive(true);
-                FindObjectOfType<Camera>().GetComponent<CameraFollow>().target = DragonPlayer.transform;
+                DragonTransform.position = HumanPlayer.transform.position;
+                FindObjectOfType<Camera>().GetComponent<CameraFollow>().target = DragonTransform;
             }
             else
             {
                 DragonPlayer.SetActive(false);
                 HumanPlayer.SetActive(true);
+                HumanPlayer.transform.position = DragonTransform.position;
                 FindObjectOfType<Camera>().GetComponent<CameraFollow>().target = HumanPlayer.transform;
             }
+            Human = !Human;
             
         }
         if (Human){
@@ -42,7 +45,7 @@ public class PlayerSwitcher : MonoBehaviour
         }
         else
         {
-            transform.position = DragonPlayer.transform.position;
+            transform.position = DragonTransform.position;
         }
     }
 }

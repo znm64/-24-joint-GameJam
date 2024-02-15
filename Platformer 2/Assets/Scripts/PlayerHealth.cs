@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     private int health;
-    private int maxHealth;
+    private int maxHealth = 5;
     [SerializeField] private AudioSource DamagedSound;
 
     public Image[] hearts;
@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = 5;
     }
 
     // Update is called once per frame

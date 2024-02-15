@@ -6,6 +6,7 @@ public class DragonMovement : MonoBehaviour
 {
 
     private float speed = 0.3f;
+    private float maxSpeed = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,14 @@ public class DragonMovement : MonoBehaviour
         Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         targetPos.z = transform.position.z;
         float dist = Vector2.Distance(transform.position, targetPos);
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, dist*speed/10);
+        float moveDistance = (dist * speed / 10);
+        if (moveDistance > maxSpeed)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, maxSpeed);
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveDistance);
+        }
     }
 }
