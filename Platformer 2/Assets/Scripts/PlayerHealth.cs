@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     private int health;
-    private int maxHealth = 5;
+    [SerializeField] private int maxHealth;
     [SerializeField] private AudioSource DamagedSound;
 
     public Image[] hearts;
@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 5;
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -26,13 +26,19 @@ public class PlayerHealth : MonoBehaviour
         {
             health = maxHealth;
         }
+        else if (health < 0)
+        {
+            health = 0;
+        }
+        int heart = Mathf.FloorToInt((health / 2));
+        Debug.Log(heart);
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < (health / 2)-0.5f)
+            if (i < heart)
             {
                 hearts[i].sprite = fullHeart;
             }
-            else if (i == (health / 2) - 0.5f)
+            else if (i == heart)
             {
                 hearts[i].sprite = halfHeart;
             }
@@ -43,9 +49,9 @@ public class PlayerHealth : MonoBehaviour
         }
     }
     public void Damage(int amount)
-    {
+    {   
         health -= amount;
-        DamagedSound.Play();
+        //DamagedSound.Play();
     }
     public void Heal(int amount)
     {

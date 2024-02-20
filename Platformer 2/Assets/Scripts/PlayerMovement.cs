@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private float jumpingPower = 12f;
     private bool isFacingRight = true;
     private int jumps = 2;
+    private Vector2 knockback = Vector2.zero;
 
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D rb;
@@ -52,7 +53,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal *speed, rb.velocity.y);
+        rb.velocity = new Vector2(horizontal *speed, rb.velocity.y) + knockback;
+        //knockback *= 99 / 100;
+        //Debug.Log(knockback);
     }
 
     private bool IsGrounded()
@@ -69,5 +72,10 @@ public class PlayerMovement : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
+    }
+
+    public void Knockback(Vector2 amount)
+    {
+        knockback = amount;
     }
 }
