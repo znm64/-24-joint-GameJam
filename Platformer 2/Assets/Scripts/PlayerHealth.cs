@@ -30,15 +30,15 @@ public class PlayerHealth : MonoBehaviour
         {
             health = 0;
         }
-        int heart = Mathf.FloorToInt((health / 2));
+        int heart = health;
         Debug.Log(heart);
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < heart)
+            if ((i+1) <= heart/2)
             {
                 hearts[i].sprite = fullHeart;
             }
-            else if (i == heart)
+            else if ((i+0.5f) == (float) heart/2)
             {
                 hearts[i].sprite = halfHeart;
             }
