@@ -55,10 +55,7 @@ public class GoblinMovement : MonoBehaviour
         {
             horizontal = 0;
         }
-        //if it's next to a wall, and not currently vertically moving
-        //just have a cooldown for this nvm
-        Debug.Log(rb.velocity.y);
-        Debug.Log(IsAbleToJump());
+        //if it's next to a wall, and the cooldown from the last jump was sufficient
         
         if (((delayCount>180)) && IsAbleToJump())
         {
