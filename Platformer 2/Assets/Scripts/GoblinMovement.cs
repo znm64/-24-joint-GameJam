@@ -21,11 +21,14 @@ public class GoblinMovement : MonoBehaviour
     private int TimeBetweenAttacks = 100;
     private int DmgCounter = 0;
     private float horizontal;
-    private float speed = 10f;
+    private float speed = 2f;
     private bool isFacingRight = true;
     private int Seen = 0;
     private int ForgetTime = 1000;
-    private float jumpingPower = 12f;
+    //change this back to 12 after testing
+    private float jumpingPower = 15f;
+    private int delayCount = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,7 @@ public class GoblinMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        delayCount ++;
         if (Seen > 0)
         {
             if (Target.position.x > rb.position.x)
@@ -51,12 +55,17 @@ public class GoblinMovement : MonoBehaviour
         {
             horizontal = 0;
         }
-        Flip();
         //if it's next to a wall, and not currently vertically moving
-        if ((rb.velocity.y == 0) && IsAbleToJump())
+        //just have a cooldown for this nvm
+        Debug.Log(rb.velocity.y);
+        Debug.Log(IsAbleToJump());
+        
+        if (((delayCount>180)) && IsAbleToJump())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);     
+            delayCount = 0;
         }
+        Flip();
         
     }
     private void FixedUpdate()
