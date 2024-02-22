@@ -11,16 +11,21 @@ public class GoblinMovement : MonoBehaviour
     [SerializeField] private int Ground;
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private Transform heightCheck;
+    [SerializeField] private LayerMask wallLayer;
+
 
     private float attackRadius = 1f;
     private int attackDamage = 1;
     private int TimeBetweenAttacks = 100;
     private int DmgCounter = 0;
     private float horizontal;
-    private float speed = 1f;
+    private float speed = 10f;
     private bool isFacingRight = true;
     private int Seen = 0;
     private int ForgetTime = 1000;
+    private float jumpingPower = 12f;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +52,11 @@ public class GoblinMovement : MonoBehaviour
             horizontal = 0;
         }
         Flip();
+        //if it's next to a wall, and not currently vertically moving
+        if ((rb.velocity.y == 0) && IsAbleToJump())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+        }
         
     }
     private void FixedUpdate()
@@ -90,5 +100,10 @@ public class GoblinMovement : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
+    }
+
+    private bool IsAbleToJump()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer) && ! Physics2D.OverlapCircle(heightCheck.position, 0.2f, wallLayer);
     }
 }
