@@ -27,7 +27,9 @@ public class GoblinMovement : MonoBehaviour
     private int ForgetTime = 1000;
     //change this back to 12 after testing
     private float jumpingPower = 15f;
+    //this delay count ensures that the jump works correctly
     private int delayCount = 0;
+    private float horizontalDiff;
 
 
     // Start is called before the first frame update
@@ -99,7 +101,8 @@ public class GoblinMovement : MonoBehaviour
 
     private void Flip()
     {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        horizontalDiff = transform.position.x - Target.position.x;
+        if ((isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f) && (Math.Abs(horizontalDiff)>0.1))
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
