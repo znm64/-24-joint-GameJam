@@ -31,7 +31,6 @@ public class PlayerHealth : MonoBehaviour
             health = 0;
         }
         int heart = health;
-        Debug.Log(heart);
         for (int i = 0; i < hearts.Length; i++)
         {
             if ((i+1) <= heart/2)
