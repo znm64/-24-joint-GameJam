@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-PostProcessVolume QuickVolume(int layer, float priority, params PostProcessEffectSettings[] settings);
+//PostProcessVolume QuickVolume(int layer, float priority, params PostProcessEffectSettings[] settings);
 
 public class VignettePulse : MonoBehaviour
 {
