@@ -15,11 +15,12 @@ public class GoblinMovement : MonoBehaviour
     [SerializeField] private Transform heightCheck;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private Animator animator;
 
 
-    private float attackRadius = 1.5f;
+    private float attackRadius = 1.2f;
     private int attackDamage = 1;
-    private int TimeBetweenAttacks = 80;
+    private int TimeBetweenAttacks = 50;
     private int DmgCounter = 0;
     private float horizontal;
     private float speed = 2f;
@@ -43,7 +44,7 @@ public class GoblinMovement : MonoBehaviour
     {
         Debug.Log(Mathf.Abs(Target.position.x - transform.position.x));
         delayCount ++;
-        if (Seen > 0 && Mathf.Abs(Target.position.x - transform.position.x) > 0.5f)
+        if (Seen > 0 && Mathf.Abs(Target.position.x - transform.position.x) > 0.5f && DmgCounter == 0)
         {
             if (Target.position.x > rb.position.x)
             {
@@ -85,19 +86,24 @@ public class GoblinMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
 
         
-        if (DmgCounter == 0)
+        if (DmgCounter == Mathf.RoundToInt(TimeBetweenAttacks / 2))
         {
             if (Vector2.Distance(transform.position, Target.position) < attackRadius)
             {
                 playerHealth.Damage(attackDamage);
-                DmgCounter = TimeBetweenAttacks;
                 //playerMovement.Knockback((transform.position - Target.position));
-                //Debug.Log(transform.position - Target.position);
+                //Debug.Log();
             }
         }
-        else
+        if (DmgCounter > 0)
         {
             DmgCounter--;
+        }
+
+        if (Vector2.Distance(transform.position, Target.position) < attackRadius && DmgCounter == 0 && (isFacingRight == Target.position.x > transform.position.x))
+        {
+            DmgCounter = TimeBetweenAttacks;
+            animator.SetTrigger("Attack");
         }
     }
 
