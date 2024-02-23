@@ -17,9 +17,9 @@ public class GoblinMovement : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
 
 
-    private float attackRadius = 1f;
+    private float attackRadius = 1.5f;
     private int attackDamage = 1;
-    private int TimeBetweenAttacks = 100;
+    private int TimeBetweenAttacks = 80;
     private int DmgCounter = 0;
     private float horizontal;
     private float speed = 2f;
@@ -27,10 +27,9 @@ public class GoblinMovement : MonoBehaviour
     private int Seen = 0;
     private int ForgetTime = 1000;
     //change this back to 12 after testing
-    private float jumpingPower = 15f;
+    private float jumpingPower = 12f;
     //this delay count ensures that the jump works correctly
     private int delayCount = 0;
-    private float horizontalDiff;
 
 
     // Start is called before the first frame update
@@ -42,8 +41,9 @@ public class GoblinMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Mathf.Abs(Target.position.x - transform.position.x));
         delayCount ++;
-        if (Seen > 0)
+        if (Seen > 0 && Mathf.Abs(Target.position.x - transform.position.x) > 0.5f)
         {
             if (Target.position.x > rb.position.x)
             {
@@ -70,7 +70,8 @@ public class GoblinMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Physics2D.Raycast(transform.position, (Target.position-transform.position), Vector2.Distance(Target.position, transform.position), 1<<Ground) || Vector2.Distance(Target.position, transform.position) > 1000f)
+        float dist = Vector2.Distance(Target.position, transform.position);
+        if (Physics2D.Raycast(transform.position, (Target.position-transform.position), dist, 1<<Ground) || dist > 15f)
         {
             if (Seen > 0)
             {
@@ -90,7 +91,7 @@ public class GoblinMovement : MonoBehaviour
             {
                 playerHealth.Damage(attackDamage);
                 DmgCounter = TimeBetweenAttacks;
-                //playerMovement.Knockback(transform.position - Target.position);
+                //playerMovement.Knockback((transform.position - Target.position));
                 //Debug.Log(transform.position - Target.position);
             }
         }
@@ -102,8 +103,8 @@ public class GoblinMovement : MonoBehaviour
 
     private void Flip()
     {
-        horizontalDiff = transform.position.x - Target.position.x;
-        if ((isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f) && (Math.Abs(horizontalDiff)>0.1))
+        float horizontalDiff = transform.position.x - Target.position.x;
+        if ((isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f))
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
@@ -114,6 +115,6 @@ public class GoblinMovement : MonoBehaviour
 
     private bool IsAbleToJump()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.5f, wallLayer) && Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer) && ! Physics2D.OverlapCircle(heightCheck.position, 0.2f, wallLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, wallLayer) && Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer) && ! Physics2D.OverlapCircle(heightCheck.position, 0.2f, wallLayer) && Mathf.Abs(Target.position.x - transform.position.x) > 0.5f;
     }
 }
