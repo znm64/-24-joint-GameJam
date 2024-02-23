@@ -13,6 +13,7 @@ public class GoblinMovement : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private Transform heightCheck;
+    [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask wallLayer;
 
 
@@ -57,9 +58,9 @@ public class GoblinMovement : MonoBehaviour
         {
             horizontal = 0;
         }
-        //if it's next to a wall, and the cooldown from the last jump was sufficient
+        //if it's next to a wall, able to jump over it, grounded, and on a sufficient cooldown
         
-        if (((delayCount>180)) && IsAbleToJump())
+        if ( delayCount > 90 && IsAbleToJump())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);     
             delayCount = 0;
@@ -113,6 +114,6 @@ public class GoblinMovement : MonoBehaviour
 
     private bool IsAbleToJump()
     {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer) && ! Physics2D.OverlapCircle(heightCheck.position, 0.2f, wallLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.5f, wallLayer) && Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer) && ! Physics2D.OverlapCircle(heightCheck.position, 0.2f, wallLayer);
     }
 }
