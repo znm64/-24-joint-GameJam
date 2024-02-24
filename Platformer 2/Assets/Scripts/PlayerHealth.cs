@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     private int health;
     [SerializeField] private int maxHealth;
     [SerializeField] private AudioSource DamagedSound;
-
+    public DamageDisplay damageDisplayer;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite halfHeart;
@@ -59,7 +59,22 @@ public class PlayerHealth : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
         }
+        //damageDisplayer.WhenDamaged();
+        StartCoroutine(addCA());
     }
+    IEnumerator addCA()
+    {
+        for (float i = 0f; i < 1f; i+=0.04f)
+        {
+            postProcessControls.AdjustCA(i);
+            yield return new WaitForSeconds(0.005f);
+        }
+        for (float i = 1f; i > 0f; i-=0.04f)
+        {
+          postProcessControls.AdjustCA(i);
+          yield return new WaitForSeconds(0.005f);
+        }
+    }    
     public void Heal(int amount)
     {
         health += amount;

@@ -4,7 +4,6 @@ using UnityEngine;
 public class DamageDisplay : MonoBehaviour
 {
     SpriteRenderer sprite;
-    float now;
     Color prev;
     void Start()
     {

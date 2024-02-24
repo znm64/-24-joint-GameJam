@@ -8,13 +8,13 @@ public class PostProcessControls : MonoBehaviour
      [SerializeField] public Volume postProcessingVolume;
      [Header("Post Processing profiles")]
      private Vignette vignette_val;
-     private Bloom bloom_val;
+     private ChromaticAberration CA_val;
      [SerializeField] private VolumeProfile postProfileMain;
      [SerializeField] private VolumeProfile postProfileEther;
      private void Start()
      {
           postProcessingVolume.profile.TryGet(out vignette_val);
-          postProcessingVolume.profile.TryGet(out bloom_val);
+          postProcessingVolume.profile.TryGet(out CA_val);
      }
      public void MainPostProcess()
      {
@@ -39,16 +39,16 @@ public class PostProcessControls : MonoBehaviour
           vignette_val.intensity.value = newVignette;
      }
 
-     public void AdjustBloom(float newBloom)
+     public void AdjustCA(float newCA)
      {
-          if (newBloom > 1f)
+          if (newCA > 1f)
           {
-               bloom_val.intensity.value = 1f;
+               CA_val.intensity.value = 1f;
           }
-          if (newBloom > 0f)
+          if (newCA > 0f)
           {
-               bloom_val.intensity.value = 0f;
+               CA_val.intensity.value = 0f;
           }
-          bloom_val.intensity.value = newBloom;
+          CA_val.intensity.value = newCA;
      }
 }
