@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     private int health;
     [SerializeField] private AudioSource DamagedSound;
     [SerializeField] private GameObject DeathParticles;
+    public DamageDisplay damageDisplayer;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +38,6 @@ public class EnemyHealth : MonoBehaviour
     {
         health -= amount;
         //DamagedSound.Play();
+        damageDisplayer.WhenDamaged();
     }
 }

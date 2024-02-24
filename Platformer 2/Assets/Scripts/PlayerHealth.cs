@@ -73,7 +73,6 @@ public class PlayerHealth : MonoBehaviour
             float a = health;
             float b = maxHealth;
             postProcessControls.AdjustVignette(0.45f*(1f-(a/b)));
-            Debug.Log(0.45f*(1f-(a/b)));
         }
     }
 }

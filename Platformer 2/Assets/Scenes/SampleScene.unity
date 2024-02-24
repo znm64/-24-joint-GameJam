@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 452207803}
   - component: {fileID: 452207809}
   - component: {fileID: 452207810}
+  - component: {fileID: 452207811}
   m_Layer: 9
   m_Name: CorruptedSoldier
   m_TagString: Untagged
@@ -669,6 +670,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2057397436}
+  - {fileID: 645783640}
   - {fileID: 868818145}
   - {fileID: 2048760413}
   m_Father: {fileID: 0}
@@ -709,6 +711,19 @@ MonoBehaviour:
   maxHealth: 2
   DamagedSound: {fileID: 0}
   DeathParticles: {fileID: 4116583740519412476, guid: ebce6725f95a30940b48d97dbeb7d422, type: 3}
+  damageDisplayer: {fileID: 452207811}
+--- !u!114 &452207811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452207802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314a74bd0f276d54f9884f9f712f8455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +876,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 2
   target: {fileID: 629420953}
+--- !u!1 &525810490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 525810492}
+  - component: {fileID: 525810491}
+  m_Layer: 9
+  m_Name: DamageDisplayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &525810491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525810490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314a74bd0f276d54f9884f9f712f8455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &525810492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525810490}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1833522136}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &578975961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1267,6 +1326,50 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!1 &645783639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 645783640}
+  - component: {fileID: 645783641}
+  m_Layer: 9
+  m_Name: DamageDisplayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &645783640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645783639}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.3, y: -0.43000007, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 452207808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &645783641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645783639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314a74bd0f276d54f9884f9f712f8455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &691806758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,6 +2401,7 @@ GameObject:
   - component: {fileID: 1833522141}
   - component: {fileID: 1833522142}
   - component: {fileID: 1833522143}
+  - component: {fileID: 1833522144}
   m_Layer: 9
   m_Name: Goblin
   m_TagString: Untagged
@@ -2321,6 +2425,7 @@ Transform:
   - {fileID: 1171813225}
   - {fileID: 1767782642}
   - {fileID: 1255456871}
+  - {fileID: 525810492}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1833522137
@@ -2497,6 +2602,19 @@ MonoBehaviour:
   maxHealth: 2
   DamagedSound: {fileID: 0}
   DeathParticles: {fileID: 4116583740519412476, guid: ebce6725f95a30940b48d97dbeb7d422, type: 3}
+  damageDisplayer: {fileID: 1833522144}
+--- !u!114 &1833522144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833522135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314a74bd0f276d54f9884f9f712f8455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1856341087
 GameObject:
   m_ObjectHideFlags: 0
