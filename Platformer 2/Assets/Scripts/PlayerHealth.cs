@@ -13,10 +13,13 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fullHeart;
     public Sprite halfHeart;
     public Sprite emptyHeart;
+    public PostProcessControls postProcessControls;
+    public bool EnableVignettePP;
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
+        UpdatePP();
     }
 
     // Update is called once per frame
@@ -51,9 +54,22 @@ public class PlayerHealth : MonoBehaviour
     {   
         health -= amount;
         //DamagedSound.Play();
+        UpdatePP();
     }
     public void Heal(int amount)
     {
         health += amount;
+        UpdatePP();
+    }
+    public void UpdatePP()
+    {
+        if (EnableVignettePP)
+        {
+            //sorry i'm aware thats there's defo a better way to convert these vars on the line
+            float a = health;
+            float b = maxHealth;
+            postProcessControls.AdjustVignette(0.45f*(1f-(a/b)));
+            Debug.Log(0.45f*(1f-(a/b)));
+        }
     }
 }

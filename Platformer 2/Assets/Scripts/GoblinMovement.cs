@@ -42,7 +42,6 @@ public class GoblinMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Mathf.Abs(Target.position.x - transform.position.x));
         delayCount ++;
         if (Seen > 0 && Mathf.Abs(Target.position.x - transform.position.x) > 0.5f && DmgCounter == 0)
         {
