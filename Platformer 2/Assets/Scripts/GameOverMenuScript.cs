@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mainMenuScript : MonoBehaviour
+public class GameOverMenuScript : MonoBehaviour
 {
-
-    [SerializeField] public GameObject mainMenu;
-
+    [SerializeField] public GameObject gameOverCanvas;
     // Start is called before the first frame update
     void Start()
     {
-        mainMenu.SetActive(true);
+        gameOverCanvas.SetActive(true);
     }
 
     // Update is called once per frame
@@ -19,13 +17,13 @@ public class mainMenuScript : MonoBehaviour
         
     }
 
-    public void startButton()
+    public void reincarnateButton()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
 
-    public void quitButton()
+    public void returnToMenuButton()
     {
-        Application.Quit();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MenuScene");
     }
 }

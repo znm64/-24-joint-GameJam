@@ -55,6 +55,10 @@ public class PlayerHealth : MonoBehaviour
         health -= amount;
         //DamagedSound.Play();
         UpdatePP();
+        if (health <= 0)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
+        }
     }
     public void Heal(int amount)
     {
