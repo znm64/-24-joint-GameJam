@@ -13076,6 +13076,7 @@ GameObject:
   - component: {fileID: 1833522142}
   - component: {fileID: 1833522143}
   - component: {fileID: 1833522144}
+  - component: {fileID: 1833522145}
   m_Layer: 9
   m_Name: Goblin
   m_TagString: Untagged
@@ -13295,6 +13296,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314a74bd0f276d54f9884f9f712f8455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1833522145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833522135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb23871a2747b604895577b22b7d7a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSwitcher: {fileID: 1573976916}
 --- !u!1 &1856341087
 GameObject:
   m_ObjectHideFlags: 0

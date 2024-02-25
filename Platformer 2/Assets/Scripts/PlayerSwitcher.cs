@@ -55,4 +55,8 @@ public class PlayerSwitcher : MonoBehaviour
             transform.position = DragonTransform.position;
         }
     }
+    public bool GetState()
+    {
+        return Human;  
+    }
 }
