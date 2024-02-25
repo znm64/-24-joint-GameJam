@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
@@ -17,6 +18,7 @@ public class SoulMovement : MonoBehaviour
     [SerializeField] private Transform PlayerTransform;
     [SerializeField] private GameObject PurifiedSoldier;    
     [SerializeField] private PlayerSwitcher playerSwitcher;
+    [SerializeField] private GameObject cor;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +51,7 @@ public class SoulMovement : MonoBehaviour
 
             foreach (Collider2D col in Physics2D.OverlapCircleAll(transform.position, TetherRadius))
             {
-                if ((col.gameObject).GetType().Name == "CorruptedSoldier")
+                if (PrefabUtility.GetPrefabParent(col.gameObject) == PrefabUtility.GetPrefabParent(cor))
                 {
                     Instantiate(PurifiedSoldier, col.transform.position, Quaternion.identity);
                     Destroy(col.gameObject);
