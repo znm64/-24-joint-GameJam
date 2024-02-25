@@ -5646,6 +5646,7 @@ MonoBehaviour:
   maxHealth: 2
   DamagedSound: {fileID: 0}
   DeathParticles: {fileID: 4116583740519412476, guid: ebce6725f95a30940b48d97dbeb7d422, type: 3}
+  damageDisplayer: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5659,6 +5660,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5798,6 +5800,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 2
   target: {fileID: 629420953}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe918d0a533b4124db89a7fe89cfe597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &578975961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6801,6 +6815,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 0
   DamagedSound: {fileID: 0}
+  cameraShake: {fileID: 0}
+  damageDisplayer: {fileID: 0}
   hearts: []
   fullHeart: {fileID: 21300000, guid: 73e59af411b9b274ea71bb6081217357, type: 3}
   halfHeart: {fileID: 21300000, guid: d5088f4dcd2a1ca409e1a5eca9e28822, type: 3}
@@ -12347,6 +12363,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   DamagedSound: {fileID: 1573976920}
+  cameraShake: {fileID: 0}
+  damageDisplayer: {fileID: 0}
   hearts:
   - {fileID: 595186315}
   - {fileID: 191742105}
@@ -12766,6 +12784,7 @@ MonoBehaviour:
   maxHealth: 2
   DamagedSound: {fileID: 0}
   DeathParticles: {fileID: 4116583740519412476, guid: ebce6725f95a30940b48d97dbeb7d422, type: 3}
+  damageDisplayer: {fileID: 0}
 --- !u!1 &1856341087
 GameObject:
   m_ObjectHideFlags: 0

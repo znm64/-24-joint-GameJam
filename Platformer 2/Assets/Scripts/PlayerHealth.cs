@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     private int health;
     [SerializeField] private int maxHealth;
     [SerializeField] private AudioSource DamagedSound;
+    [SerializeField] private CameraShake cameraShake;
     public DamageDisplay damageDisplayer;
     public Image[] hearts;
     public Sprite fullHeart;
@@ -54,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
     {   
         health -= amount;
         DamagedSound.Play();
+        cameraShake.Shake(10f, 100f);
         UpdatePP();
         if (health <= 0)
         {
