@@ -15,7 +15,7 @@ public class SoulMovement : MonoBehaviour
     private float Speed = 0.02f;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform PlayerTransform;
-    [SerializeField] private GameObject PurifiedSoldier;
+    [SerializeField] private GameObject PurifiedSoldier;    
     [SerializeField] private PlayerSwitcher playerSwitcher;
     // Start is called before the first frame update
     void Start()
@@ -49,7 +49,7 @@ public class SoulMovement : MonoBehaviour
 
             foreach (Collider2D col in Physics2D.OverlapCircleAll(transform.position, TetherRadius))
             {
-                if (col.gameObject.name == "CorruptedSoldier")
+                if ((col.gameObject).GetType().Name == "CorruptedSoldier")
                 {
                     Instantiate(PurifiedSoldier, col.transform.position, Quaternion.identity);
                     Destroy(col.gameObject);
