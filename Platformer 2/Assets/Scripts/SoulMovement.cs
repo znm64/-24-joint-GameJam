@@ -50,7 +50,7 @@ public class SoulMovement : MonoBehaviour
 
             foreach (Collider2D col in Physics2D.OverlapCircleAll(transform.position, TetherRadius))
             {
-                if (PrefabUtility.GetPrefabParent(col.gameObject).name == "PurifiedSoldier")
+                if (PrefabUtility.GetPrefabParent(col.gameObject).name == "CorruptedSoldier")
                 {
                     Instantiate(PurifiedSoldier, col.transform.position, Quaternion.identity);
                     Destroy(col.gameObject);
