@@ -73,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
         {
             knockback -= 0.05f * OGKB;
         }
-        Debug.Log(knockback);
         if (DmgCounter == Mathf.RoundToInt(TimeBetweenAttacks / 2))
         {
             Attack();
