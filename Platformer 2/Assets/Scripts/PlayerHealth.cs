@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     private int health;
     [SerializeField] private int maxHealth;
     [SerializeField] private AudioSource DamagedSound;
-    [SerializeField] private CameraShake cameraShake;
+    [SerializeField] private CameraFollow cameraShake;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite halfHeart;
@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
     {   
         health -= amount;
         DamagedSound.Play();
-        StartCoroutine(cameraShake.Shake(.15f, .4f));
+        cameraShake.Shake(.15f, 0.4f);
         UpdatePP();
         if (health <= 0)
         {

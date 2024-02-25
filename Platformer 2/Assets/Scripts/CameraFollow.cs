@@ -7,6 +7,11 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float followSpeed = 2f;
     [SerializeField] public Transform target;
 
+    private Vector3 offset;
+    private float shaketime;
+    private float duration;
+    private float mag;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +22,23 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         Vector3 newPos = new Vector3(target.position.x, target.position.y, -10f);
-        transform.position = Vector3.Slerp(transform.position, newPos, followSpeed*Time.deltaTime);
+        transform.position = Vector3.Slerp(transform.position, newPos, followSpeed*Time.deltaTime) + offset;
+        Debug.Log(shaketime);
+        if (shaketime < duration)
+        {
+            shaketime += Time.deltaTime;
+            offset = new Vector2(Random.Range(-1f, 1f) * mag, Random.Range(-1f, 1f) * mag);
+        }
+        else
+        {
+            offset = Vector2.zero;
+        }
+    }
+
+    public void Shake(float magnitude, float dur)
+    {
+        shaketime = 0f;
+        duration = dur;
+        mag = magnitude;
     }
 }

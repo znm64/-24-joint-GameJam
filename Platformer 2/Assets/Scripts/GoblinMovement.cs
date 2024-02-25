@@ -20,15 +20,15 @@ public class GoblinMovement : MonoBehaviour
     [SerializeField] private GameObject jumpParticles;
 
 
-    private float attackRadius = 0.5f;
+    private float attackRadius = 0.3f;
     private int attackDamage = 1;
-    private int TimeBetweenAttacks = 50;
+    private int TimeBetweenAttacks = 40;
     private int DmgCounter = 0;
     private float horizontal;
     private float speed = 2f;
     private bool isFacingRight = true;
     private int Seen = 0;
-    private int ForgetTime = 1000;
+    private int ForgetTime = 200;
     //change this back to 12 after testing
     private float jumpingPower = 12f;
     //this delay count ensures that the jump works correctly
@@ -93,7 +93,16 @@ public class GoblinMovement : MonoBehaviour
             if (inRadius)
             {
                 playerHealth.Damage(attackDamage);
-                //playerMovement.Knockback((transform.position - Target.position));
+                if (isFacingRight)
+                {
+                    playerMovement.Knockback(new Vector2(5f, 2f));
+                }
+                else
+                {
+                    playerMovement.Knockback(new Vector2(-5f, 2f));
+                }
+                
+                //playerMovement.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(100f, 0f), ForceMode2D.Impulse);
             }
         }
         if (DmgCounter > 0)

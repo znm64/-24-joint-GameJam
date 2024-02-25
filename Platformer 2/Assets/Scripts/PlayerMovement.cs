@@ -10,9 +10,10 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     private int jumps = 2;
     private Vector2 knockback = Vector2.zero;
+    private Vector2 OGKB = Vector2.zero;
     private float attackRadius = 0.5f;
     private int attackDamage = 1;
-    private int TimeBetweenAttacks = 40;
+    private int TimeBetweenAttacks = 30;
     private int DmgCounter = 0;
 
     [SerializeField] private Animator animator;
@@ -68,8 +69,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y) + knockback;
-        //knockback *= 99 / 100;
-        //Debug.Log(knockback);
+        if (knockback != Vector2.zero)
+        {
+            knockback -= 0.05f * OGKB;
+        }
         if (DmgCounter == Mathf.RoundToInt(TimeBetweenAttacks / 2))
         {
             Attack();
@@ -98,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
     public void Knockback(Vector2 amount)
     {
         knockback = amount;
+        OGKB = amount;
     }
 
     private void Attack()

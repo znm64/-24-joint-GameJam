@@ -12696,7 +12696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   DamagedSound: {fileID: 1573976920}
-  cameraShake: {fileID: 519292152}
+  cameraShake: {fileID: 519292153}
   hearts:
   - {fileID: 595186315}
   - {fileID: 191742105}
