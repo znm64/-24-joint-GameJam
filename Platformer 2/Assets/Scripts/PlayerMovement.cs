@@ -21,7 +21,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform attackCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask enemyLayer;
-    
+    [SerializeField] private AudioSource attackSFX;
+    [SerializeField] private AudioSource jumpSFX;
+    [SerializeField] private GameObject jumpParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,12 +52,15 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumps--;
+            jumpSFX.Play();
+            Instantiate(jumpParticles, groundCheck.position, Quaternion.identity);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && DmgCounter == 0)
         {
             DmgCounter = TimeBetweenAttacks;
             animator.SetTrigger("Attack");
+            attackSFX.Play();
         }
 
         Flip();

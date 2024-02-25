@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
     public void Damage(int amount)
     {   
         health -= amount;
-        //DamagedSound.Play();
+        DamagedSound.Play();
         UpdatePP();
         if (health <= 0)
         {
