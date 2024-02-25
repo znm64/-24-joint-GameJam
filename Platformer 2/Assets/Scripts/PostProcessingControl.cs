@@ -9,6 +9,7 @@ public class PostProcessControls : MonoBehaviour
      [Header("Post Processing profiles")]
      private Vignette vignette_val;
      private ChromaticAberration CA_val;
+     private WhiteBalance WB_val;
      [SerializeField] private VolumeProfile postProfileMain;
      [SerializeField] private VolumeProfile postProfileEther;
      private void Start()
@@ -50,5 +51,17 @@ public class PostProcessControls : MonoBehaviour
                CA_val.intensity.value = 0f;
           }
           CA_val.intensity.value = newCA;
+     }
+     public void AdjustWB(float newWB)
+     {
+          if (newWB > 100f)
+          {
+               WB_val.temperature.value = 100f;
+          }
+          if (newWB < -100f)
+          {
+               WB_val.temperature.value = 100f;
+          }
+          WB_val.temperature.value = newWB;
      }
 }

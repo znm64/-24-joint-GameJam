@@ -26,6 +26,8 @@ public class PlayerSwitcher : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+            StartCoroutine(SwitchAnim());
+            
             if (Human)
             {
                 postProcessControls.EtherPostProcess();
@@ -58,5 +60,21 @@ public class PlayerSwitcher : MonoBehaviour
     public bool GetState()
     {
         return Human;  
+    }
+    IEnumerator SwitchAnim()
+    {
+        Debug.Log("SUMMONED");
+        for (float i = 0f; i < 100f; i++)
+        {
+            postProcessControls.AdjustWB(i);
+            yield return new WaitForSeconds(0.01f);
+            Debug.Log(i);
+        }
+        for (float i = 100f; i > 0f; i--)
+        {
+            postProcessControls.AdjustWB(i);
+            yield return new WaitForSeconds(0.01f);
+            Debug.Log(i);
+        }
     }
 }

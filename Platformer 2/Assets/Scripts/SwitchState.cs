@@ -14,8 +14,6 @@ public class SwitchState : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(playerSwitcher.GetState());
-
         if (! playerSwitcher.GetState())
         {
             ToEther();
@@ -24,7 +22,6 @@ public class SwitchState : MonoBehaviour
         {
             ToNormal();
         }
-       
     }
 
     public void ToEther()
@@ -33,7 +30,7 @@ public class SwitchState : MonoBehaviour
     }
 
     public void ToNormal()
-    {      
+    {
         sprite.color = defaultcolor;
     }  
 }
