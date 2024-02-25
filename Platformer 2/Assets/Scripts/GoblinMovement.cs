@@ -93,7 +93,16 @@ public class GoblinMovement : MonoBehaviour
             if (inRadius)
             {
                 playerHealth.Damage(attackDamage);
-                //playerMovement.Knockback((transform.position - Target.position));
+                if (isFacingRight)
+                {
+                    playerMovement.Knockback(new Vector2(5f, 2f));
+                }
+                else
+                {
+                    playerMovement.Knockback(new Vector2(-5f, 2f));
+                }
+                
+                //playerMovement.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(100f, 0f), ForceMode2D.Impulse);
             }
         }
         if (DmgCounter > 0)
