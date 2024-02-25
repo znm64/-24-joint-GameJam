@@ -5954,7 +5954,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 7.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -12844,7 +12844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1756752400}
   - component: {fileID: 1756752401}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
