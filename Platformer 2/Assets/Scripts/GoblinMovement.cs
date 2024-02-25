@@ -123,6 +123,6 @@ public class GoblinMovement : MonoBehaviour
 
     private bool IsAbleToJump()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, wallLayer) && Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer) && ! Physics2D.OverlapCircle(heightCheck.position, 0.2f, wallLayer) && Mathf.Abs(Target.position.x - transform.position.x) > 0.5f && (horizontal > 0);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, wallLayer) && Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer) && ! Physics2D.OverlapCircle(heightCheck.position, 0.2f, wallLayer) && Mathf.Abs(Target.position.x - transform.position.x) > 0.5f && (horizontal != 0);
     }
 }
