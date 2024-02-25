@@ -7071,7 +7071,6 @@ MonoBehaviour:
   maxHealth: 0
   DamagedSound: {fileID: 0}
   cameraShake: {fileID: 0}
-  damageDisplayer: {fileID: 0}
   hearts: []
   fullHeart: {fileID: 21300000, guid: 73e59af411b9b274ea71bb6081217357, type: 3}
   halfHeart: {fileID: 21300000, guid: d5088f4dcd2a1ca409e1a5eca9e28822, type: 3}
@@ -12017,6 +12016,8 @@ GameObject:
   - component: {fileID: 1216373862}
   - component: {fileID: 1216373863}
   - component: {fileID: 1216373864}
+  - component: {fileID: 1216373866}
+  - component: {fileID: 1216373865}
   m_Layer: 6
   m_Name: HumanPlayer
   m_TagString: Untagged
@@ -12394,6 +12395,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1216373865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216373855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86ea4e9a1d856b4cb5185ea62fe5da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  DamagedSound: {fileID: 0}
+  cameraShake: {fileID: 0}
+  hearts: []
+  fullHeart: {fileID: 21300000, guid: 73e59af411b9b274ea71bb6081217357, type: 3}
+  halfHeart: {fileID: 21300000, guid: d5088f4dcd2a1ca409e1a5eca9e28822, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 57bf94e6aefef3c479d5a95a400a7ec1, type: 3}
+  postProcessControls: {fileID: 0}
+  EnableVignettePP: 0
+--- !u!114 &1216373866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216373855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314a74bd0f276d54f9884f9f712f8455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1255456870
 GameObject:
   m_ObjectHideFlags: 0
@@ -12664,7 +12698,6 @@ MonoBehaviour:
   maxHealth: 10
   DamagedSound: {fileID: 1573976920}
   cameraShake: {fileID: 519292152}
-  damageDisplayer: {fileID: 0}
   hearts:
   - {fileID: 595186315}
   - {fileID: 191742105}

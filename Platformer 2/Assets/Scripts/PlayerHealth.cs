@@ -9,7 +9,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private AudioSource DamagedSound;
     [SerializeField] private CameraShake cameraShake;
-    public DamageDisplay damageDisplayer;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite halfHeart;
@@ -61,7 +60,6 @@ public class PlayerHealth : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
         }
-        //damageDisplayer.WhenDamaged();
         StartCoroutine(addCA());
     }
     IEnumerator addCA()

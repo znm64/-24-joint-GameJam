@@ -94,7 +94,6 @@ public class GoblinMovement : MonoBehaviour
             {
                 playerHealth.Damage(attackDamage);
                 //playerMovement.Knockback((transform.position - Target.position));
-                //Debug.Log();
             }
         }
         if (DmgCounter > 0)
