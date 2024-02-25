@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerSwitcher : MonoBehaviour
 {
+    public PostProcessControls postProcessControls;
     [SerializeField] private GameObject HumanPlayer;
     [SerializeField] private GameObject DragonPlayer;
     [SerializeField] private Transform DragonTransform;
@@ -25,6 +26,7 @@ public class PlayerSwitcher : MonoBehaviour
         {
             if (Human)
             {
+                postProcessControls.MainPostProcess();
                 HumanPlayer.SetActive(false);
                 DragonPlayer.SetActive(true);
                 DragonTransform.position = HumanPlayer.transform.position;
@@ -32,6 +34,7 @@ public class PlayerSwitcher : MonoBehaviour
             }
             else
             {
+                postProcessControls.MainPostProcess();   
                 DragonPlayer.SetActive(false);
                 HumanPlayer.SetActive(true);
                 HumanPlayer.transform.position = DragonTransform.position;
