@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 16f0b7a93c1fece4fb5b545b8bf3eb76
+guid: bb6635ffbbb532e4d81e452ea8b20f7d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,85 +123,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lamp_0
+      name: goblin attack spritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 16
-        height: 19
+        width: 15
+        height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.42105263}
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8484b12b3071fa4d8d37e511cccf79d
-      internalID: 178421257
+      spriteID: 0d61512778d4a8e49beb687e9bdee49a
+      internalID: -1907972013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lamp_1
+      name: goblin attack spritesheet_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 18
         y: 0
-        width: 16
-        height: 19
+        width: 21
+        height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.42105263}
+      pivot: {x: 0.2857143, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fc9a34ebb69e624b8435f0076268541
-      internalID: 1825114683
+      spriteID: 12b1549be0b64604a9302ff38df69e98
+      internalID: -1471864479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lamp_2
+      name: goblin attack spritesheet_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 40
         y: 0
-        width: 16
-        height: 19
+        width: 23
+        height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.42105263}
+      pivot: {x: 0.26086956, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 819f49fcb7244fb4790e9ae2c60bf561
-      internalID: 467869916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lamp_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 19
-      alignment: 9
-      pivot: {x: 0.5, y: 0.42105263}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6eebf6e07ccd454093dbebe6b9378da
-      internalID: -433907951
+      spriteID: c79894ad20d112740a879d91834c99e9
+      internalID: -591603354
       vertices: []
       indices: 
       edges: []
@@ -217,10 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lamp_0: 178421257
-      lamp_1: 1825114683
-      lamp_2: 467869916
-      lamp_3: -433907951
+      goblin attack spritesheet_0: -1907972013
+      goblin attack spritesheet_1: -1471864479
+      goblin attack spritesheet_2: -591603354
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

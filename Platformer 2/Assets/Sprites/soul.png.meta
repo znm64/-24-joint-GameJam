@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 16f0b7a93c1fece4fb5b545b8bf3eb76
+guid: 49ff6496dcea22a4089ee978688a279b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,85 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lamp_0
+      name: soul_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
-        height: 19
+        height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.42105263}
+      pivot: {x: 0.5, y: 0.15625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8484b12b3071fa4d8d37e511cccf79d
-      internalID: 178421257
+      spriteID: edb30acd49fcf044d84af90aa51d10d6
+      internalID: -2067066847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lamp_1
+      name: soul_1
       rect:
         serializedVersion: 2
         x: 16
         y: 0
         width: 16
-        height: 19
+        height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.42105263}
+      pivot: {x: 0.5, y: 0.15625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fc9a34ebb69e624b8435f0076268541
-      internalID: 1825114683
+      spriteID: 8bda250b401b70e478f97e73ce0ef52d
+      internalID: -932212669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lamp_2
+      name: soul_2
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 16
-        height: 19
+        height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.42105263}
+      pivot: {x: 0.5, y: 0.15625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 819f49fcb7244fb4790e9ae2c60bf561
-      internalID: 467869916
+      spriteID: 3938c6d84f3de624196a82445734cc15
+      internalID: 2091611595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lamp_3
+      name: soul_3
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 16
-        height: 19
+        height: 32
       alignment: 9
-      pivot: {x: 0.5, y: 0.42105263}
+      pivot: {x: 0.5, y: 0.15625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6eebf6e07ccd454093dbebe6b9378da
-      internalID: -433907951
+      spriteID: 10c7ac8ee2e21c540a87199d783f4955
+      internalID: -2109657796
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lamp_0: 178421257
-      lamp_1: 1825114683
-      lamp_2: 467869916
-      lamp_3: -433907951
+      soul_0: -2067066847
+      soul_1: -932212669
+      soul_2: 2091611595
+      soul_3: -2109657796
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
