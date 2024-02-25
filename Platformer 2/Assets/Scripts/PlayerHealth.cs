@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
     {   
         health -= amount;
         DamagedSound.Play();
-        cameraShake.Shake(10f, 100f);
+        StartCoroutine(cameraShake.Shake(.15f, .4f));
         UpdatePP();
         if (health <= 0)
         {
