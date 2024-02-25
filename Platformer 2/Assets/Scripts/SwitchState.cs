@@ -14,7 +14,6 @@ public class SwitchState : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(playerSwitcher.GetState());
 
         if (! playerSwitcher.GetState())
         {

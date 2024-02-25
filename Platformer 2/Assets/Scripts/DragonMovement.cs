@@ -6,7 +6,7 @@ using UnityEngine;
 public class DragonMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
-    private float speed = 3f;
+    private float speed = 4f;
     //private float maxSpeed = 1f;
     private Vector3 targetPos;
 
