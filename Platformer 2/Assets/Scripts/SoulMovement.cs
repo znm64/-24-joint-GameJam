@@ -18,7 +18,6 @@ public class SoulMovement : MonoBehaviour
     [SerializeField] private Transform PlayerTransform;
     [SerializeField] private GameObject PurifiedSoldier;    
     [SerializeField] private PlayerSwitcher playerSwitcher;
-    [SerializeField] private GameObject cor;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +50,7 @@ public class SoulMovement : MonoBehaviour
 
             foreach (Collider2D col in Physics2D.OverlapCircleAll(transform.position, TetherRadius))
             {
-                if (PrefabUtility.GetPrefabParent(col.gameObject) == PrefabUtility.GetPrefabParent(cor))
+                if (PrefabUtility.GetPrefabParent(col.gameObject).name == "PurifiedSoldier")
                 {
                     Instantiate(PurifiedSoldier, col.transform.position, Quaternion.identity);
                     Destroy(col.gameObject);
