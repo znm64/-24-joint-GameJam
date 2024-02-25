@@ -16,6 +16,7 @@ public class SoulMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform PlayerTransform;
     [SerializeField] private GameObject PurifiedSoldier;
+    [SerializeField] private PlayerSwitcher playerSwitcher;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class SoulMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameObject.GetComponent<SpriteRenderer>().enabled = !playerSwitcher.GetState();
     }
     private void FixedUpdate()
     {

@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y) + knockback;
+        rb.velocity = new Vector2(horizontal * speed + knockback.x, rb.velocity.y);
         if (knockback != Vector2.zero)
         {
             knockback -= 0.05f * OGKB;
