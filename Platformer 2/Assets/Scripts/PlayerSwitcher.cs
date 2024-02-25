@@ -8,6 +8,8 @@ public class PlayerSwitcher : MonoBehaviour
     [SerializeField] private GameObject HumanPlayer;
     [SerializeField] private GameObject DragonPlayer;
     [SerializeField] private Transform DragonTransform;
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private CameraFollow cameraFollow;
 
     private bool Human;
     // Start is called before the first frame update
@@ -15,7 +17,7 @@ public class PlayerSwitcher : MonoBehaviour
     {
         Human = true;
         DragonPlayer.SetActive(false);
-        FindObjectOfType<Camera>().GetComponent<CameraFollow>().target = HumanPlayer.transform;
+        cameraFollow.target = HumanPlayer.transform;
     }
 
     // Update is called once per frame
@@ -28,14 +30,16 @@ public class PlayerSwitcher : MonoBehaviour
                 HumanPlayer.SetActive(false);
                 DragonPlayer.SetActive(true);
                 DragonTransform.position = HumanPlayer.transform.position;
-                FindObjectOfType<Camera>().GetComponent<CameraFollow>().target = DragonTransform;
+                cameraFollow.target = DragonTransform;
+                audioManager.Play("RealToEther");
             }
             else
             {
                 DragonPlayer.SetActive(false);
                 HumanPlayer.SetActive(true);
                 HumanPlayer.transform.position = DragonTransform.position;
-                FindObjectOfType<Camera>().GetComponent<CameraFollow>().target = HumanPlayer.transform;
+                cameraFollow.target = HumanPlayer.transform;
+                audioManager.Play("EtherToReal");
             }
             Human = !Human;
             
