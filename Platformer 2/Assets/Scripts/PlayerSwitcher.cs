@@ -28,7 +28,7 @@ public class PlayerSwitcher : MonoBehaviour
         {
             if (Human)
             {
-                postProcessControls.MainPostProcess();
+                postProcessControls.EtherPostProcess();
                 HumanPlayer.SetActive(false);
                 DragonPlayer.SetActive(true);
                 DragonTransform.position = HumanPlayer.transform.position;

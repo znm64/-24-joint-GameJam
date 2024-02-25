@@ -12676,6 +12676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5873610c31c523a4d86af3e567abe52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  postProcessControls: {fileID: 1573976919}
   HumanPlayer: {fileID: 1216373855}
   DragonPlayer: {fileID: 309341661}
   DragonTransform: {fileID: 629420953}
